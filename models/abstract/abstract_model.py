@@ -37,6 +37,9 @@ class AbstractModel(ABC):
     @abstractmethod
     def __call__(self, *args):
         """run inference via `model_var(data)`
+
+        Doc string should be overridden in the child's `__call__` method
+        Accepted input types should be cleary specified
         """
         pass
 

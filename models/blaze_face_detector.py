@@ -19,6 +19,9 @@ class FaceDetector(AbstractModel):
         self.options = vision.FaceDetectorOptions(base_options=self.base_options)
         self.model = vision.FaceDetector.create_from_options(self.options)
 
+        # this might make it easier to get the image for the inference result
+        self._image_key = 'img'
+
     def preprocess(self, rgb_image: np.ndarray) -> mp.Image:
         """Convert RGB image to mediapipe Image
 
@@ -61,7 +64,16 @@ class FaceDetector(AbstractModel):
             w, h = bbox.width, bbox.height
             face_area = self.__crop_image(image_arr, x, y, w, h)
 
-            faces.append({'index': i, 'img': face_area, 'coord': {'x': x, 'y': y, 'w': w, 'h': h}})
+            faces.append({
+                'index': i,
+                self._image_key: face_area,
+                'coord': {
+                    'x': x,
+                    'y': y,
+                    'w': w,
+                    'h': h
+                }
+            })
 
         return faces
 

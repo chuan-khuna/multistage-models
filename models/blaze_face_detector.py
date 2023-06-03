@@ -13,10 +13,16 @@ import cv2
 
 class FaceDetector(AbstractModel):
 
-    def __init__(self, model_weight: str):
+    def __init__(self,
+                 model_weight: str,
+                 min_detection_confidence: float = 0.5,
+                 min_suppression_threshold: float = 0.3):
         self.model_weight = model_weight
         self.base_options = python.BaseOptions(model_asset_path=self.model_weight)
-        self.options = vision.FaceDetectorOptions(base_options=self.base_options)
+        self.options = vision.FaceDetectorOptions(
+            base_options=self.base_options,
+            min_detection_confidence=min_detection_confidence,
+            min_suppression_threshold=min_suppression_threshold)
         self.model = vision.FaceDetector.create_from_options(self.options)
 
         # this might make it easier to get the image for the inference result

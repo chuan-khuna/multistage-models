@@ -8,7 +8,9 @@ class AbstractModel(ABC):
     This is for sub-model. The sub model will be used after the first stage.
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        # self.model_weight
+        # self.model
         pass
 
     @abstractmethod
@@ -38,7 +40,5 @@ class AbstractModel(ABC):
         """
         pass
 
-    def predict(self, *args):
-        """another way to run inference
-        """
-        pass
+    # alias: another way to run inference
+    # detect = predict = __call__

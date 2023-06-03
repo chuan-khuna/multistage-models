@@ -1,0 +1,12 @@
+.DS_Store
+.ipynb_checkpoints
+*.pyc
+
+Untitled.ipynb
+Untitled[a-zA-Z0-9].ipynb
+
+*.png
+*.jpg
+*.mp4
+*.mov
+*.avi

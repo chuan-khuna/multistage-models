@@ -9,3 +9,7 @@ Try to create a 'bundle of models' - multi-stage model
 - Python Example
   - https://github.com/googlesamples/mediapipe/blob/main/examples/face_detector/python/face_detector.ipynb
   - https://developers.google.com/mediapipe/solutions/vision/face_detector/python
+
+## MediaPipe Image Embedding
+
+- https://developers.google.com/mediapipe/solutions/vision/image_embedder

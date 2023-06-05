@@ -13,3 +13,7 @@ Try to create a 'bundle of models' - multi-stage model
 ## MediaPipe Image Embedding
 
 - https://developers.google.com/mediapipe/solutions/vision/image_embedder
+
+## ONNX GoogleNet Age-Gender
+
+- https://github.com/onnx/models/tree/main/vision/body_analysis/age_gender

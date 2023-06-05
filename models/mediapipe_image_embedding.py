@@ -1,4 +1,4 @@
-# mediapipe face detector: https://developers.google.com/mediapipe/solutions/vision/face_detector
+# https://developers.google.com/mediapipe/solutions/vision/image_embedder
 
 from .abstract.abstract_model import AbstractModel
 
@@ -21,6 +21,9 @@ class EmbeddingModel(AbstractModel):
         # this option will return float (-1..1)
         self.options = vision.ImageEmbedderOptions(base_options=self.base_options)
         self.model = vision.ImageEmbedder.create_from_options(self.options)
+
+    def __repr__(self):
+        return 'MediaPipe Embedding: https://developers.google.com/mediapipe/solutions/vision/image_embedder'
 
     def preprocess(self, rgb_image: np.ndarray) -> mp.Image:
         """Convert RGB image to mediapipe Image
@@ -45,7 +48,7 @@ class EmbeddingModel(AbstractModel):
         """Embed an image to a vector
 
         Args:
-            image (Image.Image | np.ndarray): an image in (w, h, 3) RGB
+            image (Image.Image | np.ndarray): an image in (h, w, 3) RGB
 
         Returns:
             np.ndarray: an embedding vector that represents the input image with shape `(n_dims, )`

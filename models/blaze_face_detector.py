@@ -28,6 +28,9 @@ class FaceDetector(AbstractModel):
         # this might make it easier to get the image for the inference result
         self._image_key = 'img'
 
+    def __repr__(self):
+        return 'MediaPipe BlazeFace: https://developers.google.com/mediapipe/solutions/vision/face_detector'
+
     def preprocess(self, rgb_image: np.ndarray) -> mp.Image:
         """Convert RGB image to mediapipe Image
 
@@ -87,7 +90,7 @@ class FaceDetector(AbstractModel):
         """Run inference
 
         Args:
-            image (Image.Image | np.ndarray): an image in (w, h, 3) RGB
+            image (Image.Image | np.ndarray): an image in (h, w, 3) RGB
 
         Returns:
             dict: _description_

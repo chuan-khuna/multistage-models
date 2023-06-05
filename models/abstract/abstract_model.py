@@ -43,5 +43,8 @@ class AbstractModel(ABC):
         """
         pass
 
+    def __repr__(self) -> str:
+        return 'Model Name: ref URL'
+
     # alias: another way to run inference
     # detect = predict = __call__

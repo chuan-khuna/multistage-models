@@ -16,3 +16,5 @@ onnxruntime==1.15.0
 openvino==2023.0.0
 weaviate_client==3.19.2
 chromadb==0.3.25
+snakeviz==2.2.0
+pyinstrument==4.5.0

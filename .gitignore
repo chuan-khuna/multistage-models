@@ -10,3 +10,8 @@ Untitled[a-zA-Z0-9].ipynb
 *.mp4
 *.mov
 *.avi
+
+*.prof
+
+stats.txt
+stats.prof
